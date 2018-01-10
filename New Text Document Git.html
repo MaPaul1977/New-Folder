@@ -5,12 +5,13 @@
 	</head>
 	
 	<body>
-		<b id="b">What are you going to do now?</b></br></br>
+		<b>Little Bunny Foo Foo</br>Hopping through the forest</br>Scooping up the field mice</br>And bopping them on the head.</b></br></br>
 	</body>
 	
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script> 
 	<script>
 	var noTicks = 0
+var totTicks = 0
 var count = 0
 var btncount = 0
 var pcount = 0
@@ -22,7 +23,41 @@ function tick(){
 	} else {
 		noTicks = 0;
 	}
-	console.log("tick");
+	totTicks += 1;
+	
+	if (totTicks == 50){
+		$(document.body).append('<b>Down came the Good Fairy, and she said</br>&quot;Little bunny Foo Foo</br>I dont want to see you</br>Scooping up the field mice</br>And bopping them on the head&quot;</b></br></br>');
+	} else if (totTicks == 100){
+		$(document.body).append('<b>&quot;Ill give you three chances</br>And if you dont behave, I will turn you into a goon!&quot;</b></br></br>');
+	} else if (totTicks == 150){
+		$(document.body).append('<b>And the next day...</b></br></br>');
+	} else if (totTicks == 200){
+		$(document.body).empty();
+		$(document.body).append('<b>Little Bunny Foo Foo</br>Hopping through the forest</br>Scooping up the field mice</br>And bopping them on the head.</b></br></br>');
+	} else if (totTicks == 200){
+		$(document.body).append('<b>Down came the Good Fairy, and she said</br>&quot;Little bunny Foo Foo</br>I dont want to see you</br>Scooping up the field mice</br>And bopping them on the head&quot;</b></br></br>');
+	} else if (totTicks == 250){
+		$(document.body).append('<b>&quot;Ill give you two chances</br>And if you dont behave, I will turn you into a goon!&quot;</b></br></br>');
+	} else if (totTicks == 300){
+		$(document.body).append('<b>And the next day...</b></br></br>');
+	} else if (totTicks == 350){
+		$(document.body).empty();
+		$(document.body).append('<b>Little Bunny Foo Foo</br>Hopping through the forest</br>Scooping up the field mice</br>And bopping them on the head.</b></br></br>');
+	} else if (totTicks == 400){
+		$(document.body).append('<b>Down came the Good Fairy, and she said</br>&quot;Little bunny Foo Foo</br>I dont want to see you</br>Scooping up the field mice</br>And bopping them on the head&quot;</b></br></br>');
+	} else if (totTicks == 450){
+		$(document.body).append('<b>&quot;Ill give you one more chance</br>And if you dont behave, I will turn you into a goon!&quot;</b></br></br>');
+	} else if (totTicks == 500){
+		$(document.body).append('<b>And the next day...</b></br></br>');
+	} else if (totTicks == 550){
+		$(document.body).empty();
+		$(document.body).append('<b>&quot;I gave you three chances and your didnt behave so...</b></br></br>');
+	} else if (totTicks == 600){
+		$(document.body).append('<b>POOF. She turned him into a Goon!&quot;</b></br></br>');
+	} else if (totTicks == 610){
+		$(document.body).remove();
+	}
+	
 	checkLife();
 };
 
@@ -32,12 +67,13 @@ function checkLife(){
 		data.timeleft -= 1;
 		if (data.timeleft < 1) {
 			$( this ).remove();
+			btncount -= 1;
 		};
 	});
 }
 
 $(document.body).click(function() {
-	var add = '<button class="eCount" data-timeleft=10 onclick="button()">Button</button>';
+	var add = '<button class="eCount" data-timeleft=5 onclick="button()">Button</button>';
 	count += 1;
 	document.title = "Title - " + count
 	if (count > 50) {
@@ -47,17 +83,18 @@ $(document.body).click(function() {
 });
 
 function button() {
-	var add = '<p class="eCount" data-timeleft=20 onclick="p()"> Paragraph </p>';
+	var add = '<p class="eCount" data-timeleft=10 onclick="p()"> Paragraph </p>';
 	count += btncount;
 	document.title = "Title - " + count
 	if (count > 500) {
 		$(document.body).append(add);
-		pcount += 5;
+		btncount += 1;
+		
 	}
 }
 
 function p() {
-	count += pcount;
+	count += btncount*2;
 	document.title = "Title - " + count
 }
 
