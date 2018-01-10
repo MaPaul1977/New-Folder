@@ -6,6 +6,12 @@
 	
 	<body>
 		<b>Little Bunny Foo Foo</br>Hopping through the forest</br>Scooping up the field mice</br>And bopping them on the head.</b></br></br>
+	<div id="left" float=left>
+	</div>
+	<div id="center" float=center>
+	</div>
+	<div id="right" float=right>
+	</div>	
 	</body>
 	
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script> 
@@ -51,7 +57,7 @@ function tick(){
 		$(document.body).append('<b>And the next day...</b></br></br>');
 	} else if (totTicks == 550){
 		$(document.body).empty();
-		$(document.body).append('<b>&quot;I gave you three chances and your didnt behave so...</b></br></br>');
+		$(document.body).append('<b>&quot;I gave you three chances and you didnt behave so...</b></br></br>');
 	} else if (totTicks == 600){
 		$(document.body).append('<b>POOF. She turned him into a Goon!&quot;</b></br></br>');
 	} else if (totTicks == 610){
@@ -77,7 +83,7 @@ $(document.body).click(function() {
 	count += 1;
 	document.title = "Title - " + count
 	if (count > 50) {
-		$(document.body).append(add);
+		$("#left").append(add);
 		btncount += 1;
 	}
 });
@@ -87,7 +93,7 @@ function button() {
 	count += btncount;
 	document.title = "Title - " + count
 	if (count > 500) {
-		$(document.body).append(add);
+		$("#right").append(add);
 		btncount += 1;
 		
 	}
