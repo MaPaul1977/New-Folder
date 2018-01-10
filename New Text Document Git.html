@@ -73,7 +73,7 @@ function checkLife(){
 }
 
 $(document.body).click(function() {
-	var add = '<button class="eCount" data-timeleft=5 onclick="button()">Button</button>';
+	var add = '<button class="eCount" data-timeleft=10 onclick="button()">Button</button>';
 	count += 1;
 	document.title = "Title - " + count
 	if (count > 50) {
@@ -83,7 +83,7 @@ $(document.body).click(function() {
 });
 
 function button() {
-	var add = '<p class="eCount" data-timeleft=10 onclick="p()"> Paragraph </p>';
+	var add = '<p class="eCount" data-timeleft=20 onclick="p()"> Paragraph </p>';
 	count += btncount;
 	document.title = "Title - " + count
 	if (count > 500) {
